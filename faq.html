@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SocialChad</title>
+    <meta name="description" content="Frequently Asked Questions for SocialChad - Your Confidence Coach">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #000000;
+            color: #E5E5E5;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        
+        .logo span {
+            color: #D4AF37;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        /* Page Title */
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        
+        /* Category */
+        .category {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+        
+        /* FAQ Item */
+        .faq-item {
+            background-color: #1A1A1A;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+        }
+        
+        .faq-question:hover {
+            background-color: #222;
+        }
+        
+        .faq-question .icon {
+            color: #D4AF37;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question .icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+        
+        .faq-answer p {
+            color: #AAAAAA;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .faq-answer ul {
+            color: #AAAAAA;
+            font-size: 15px;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+        
+        /* Contact Box */
+        .contact-box {
+            background-color: #1A1A1A;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .contact-box p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        
+        .contact-box a {
+            display: inline-block;
+            background-color: #D4AF37;
+            color: #000000;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-box a:hover {
+            background-color: #E5C04B;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: #D4AF37;
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .logo {
+                font-size: 26px;
+            }
+            
+            .faq-question {
+                font-size: 15px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Social<span>Chad</span></div>
+            <div class="tagline">Your Confidence Coach</div>
+        </div>
+        
+        <!-- Page Title -->
+        <h1>Frequently Asked Questions</h1>
+        <p class="subtitle">Everything you need to know about SocialChad</p>
+        
+        <!-- Getting Started -->
+        <div class="category">
+            <h2 class="category-title">🚀 Getting Started</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is SocialChad?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>SocialChad is your AI-powered confidence coach for dating. Upload screenshots of dating profiles, and our AI generates personalized conversation openers. You can also chat with Chad anytime for dating advice, tips, and motivation.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I scan a profile?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>It's easy! Just follow these steps:</p>
+                    <ul>
+                        <li>Take a screenshot of a dating profile (Tinder, Hinge, Bumble, etc.)</li>
+                        <li>Open SocialChad and tap "Scan Profile"</li>
+                        <li>Upload your screenshot</li>
+                        <li>Get personalized openers in seconds!</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Which dating apps does SocialChad work with?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>SocialChad works with screenshots from any dating app, including:</p>
+                    <ul>
+                        <li>Tinder</li>
+                        <li>Hinge</li>
+                        <li>Bumble</li>
+                        <li>Instagram DMs</li>
+                        <li>And any other dating platform!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="category">
+            <h2 class="category-title">✨ Features</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What are opener tones?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Opener tones let you customize the style of your conversation starters. Choose from:</p>
+                    <ul>
+                        <li><strong>Casual & Friendly</strong> - Relaxed and approachable</li>
+                        <li><strong>Witty & Playful</strong> - Fun with a bit of humor</li>
+                        <li><strong>Confident & Direct</strong> - Straight to the point</li>
+                        <li><strong>Romantic & Sweet</strong> - Charming and thoughtful</li>
+                        <li><strong>Cocky-Funny</strong> - Bold with humor (Premium)</li>
+                        <li><strong>Ultra-Alpha</strong> - Maximum confidence (Premium)</li>
+                        <li><strong>Gentleman</strong> - Classic and respectful (Premium)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What can I ask Chad in the chat?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Chad is your personal dating coach! You can ask him about:</p>
+                    <ul>
+                        <li>How to respond to her message</li>
+                        <li>First date ideas and planning</li>
+                        <li>How to build confidence</li>
+                        <li>Profile bio improvements</li>
+                        <li>When to ask for her number</li>
+                        <li>Any dating or social situation!</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What are achievements and XP?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>SocialChad gamifies your dating journey! Earn XP (experience points) by:</p>
+                    <ul>
+                        <li>Scanning profiles</li>
+                        <li>Sending openers</li>
+                        <li>Logging matches</li>
+                        <li>Maintaining daily streaks</li>
+                    </ul>
+                    <p>Level up and unlock achievements like "First Scan," "On Fire" (3-day streak), and "GigaChad" (Level 10)!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Premium -->
+        <div class="category">
+            <h2 class="category-title">👑 Premium</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What do I get with Premium?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Premium unlocks the full SocialChad experience:</p>
+                    <ul>
+                        <li><strong>Unlimited Scans</strong> - No daily limits</li>
+                        <li><strong>All 7 Opener Tones</strong> - Including Cocky-Funny, Ultra-Alpha, Gentleman</li>
+                        <li><strong>Convo Simulator</strong> - Practice conversations with AI before messaging</li>
+                        <li><strong>Priority Chad Advice</strong> - More detailed responses</li>
+                        <li><strong>2X XP Boost</strong> - Level up twice as fast</li>
+                        <li><strong>Premium Badge</strong> - Show off your status</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How much does Premium cost?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer flexible plans:</p>
+                    <ul>
+                        <li><strong>Weekly:</strong> $4.99/week</li>
+                        <li><strong>Monthly:</strong> $14.99/month (Most Popular)</li>
+                        <li><strong>Yearly:</strong> $79.99/year (Save 70%)</li>
+                    </ul>
+                    <p>All plans include a 3-day free trial!</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I cancel my subscription?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You can cancel anytime through your device settings:</p>
+                    <ul>
+                        <li>Open your iPhone/iPad <strong>Settings</strong></li>
+                        <li>Tap your <strong>Apple ID</strong> at the top</li>
+                        <li>Tap <strong>Subscriptions</strong></li>
+                        <li>Find <strong>SocialChad</strong> and tap it</li>
+                        <li>Tap <strong>Cancel Subscription</strong></li>
+                    </ul>
+                    <p>Your Premium access continues until the end of your billing period.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I restore my purchase?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>If you've previously subscribed and need to restore your purchase:</p>
+                    <ul>
+                        <li>Go to <strong>Settings</strong> in SocialChad</li>
+                        <li>Tap <strong>Get Premium</strong></li>
+                        <li>Tap <strong>Restore Purchases</strong> at the bottom</li>
+                    </ul>
+                    <p>Make sure you're signed in with the same Apple ID you used to subscribe.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Privacy & Safety -->
+        <div class="category">
+            <h2 class="category-title">🔒 Privacy & Safety</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is my data safe?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! We take your privacy seriously:</p>
+                    <ul>
+                        <li>All data is encrypted in transit and at rest</li>
+                        <li>We never sell your personal data</li>
+                        <li>Screenshots are processed by AI and not stored long-term</li>
+                        <li>You can delete all your data anytime in Settings → Privacy</li>
+                    </ul>
+                    <p>Read our full <a href="/privacy.html" style="color: #D4AF37;">Privacy Policy</a> for details.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Will she know I'm using SocialChad?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Never! The openers we generate are personalized to each profile and designed to sound natural - like something you'd actually say. There's no watermark, branding, or any indication that you used an app.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Troubleshooting -->
+        <div class="category">
+            <h2 class="category-title">🔧 Troubleshooting</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>The scan isn't working. What should I do?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Try these steps:</p>
+                    <ul>
+                        <li>Make sure your screenshot is clear and readable</li>
+                        <li>Check your internet connection</li>
+                        <li>Ensure you have scans remaining (free users get 3/day)</li>
+                        <li>Try closing and reopening the app</li>
+                        <li>Make sure AI Data Sharing is enabled in Settings → Privacy</li>
+                    </ul>
+                    <p>Still having issues? <a href="mailto:support@socialchad.app" style="color: #D4AF37;">Contact support</a></p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>I was charged but don't have Premium. Help!</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Don't worry, we can fix this:</p>
+                    <ul>
+                        <li>First, try <strong>Restore Purchases</strong> in Settings → Get Premium</li>
+                        <li>Make sure you're signed in with the correct Apple ID</li>
+                        <li>Try restarting the app</li>
+                        <li>If it still doesn't work, email us at <a href="mailto:support@socialchad.app" style="color: #D4AF37;">support@socialchad.app</a> with your Apple ID email and we'll sort it out</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Box -->
+        <div class="contact-box">
+            <h3>Still have questions?</h3>
+            <p>Our support team is here to help!</p>
+            <a href="mailto:support@socialchad.app">Contact Support</a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/faq.html">FAQ</a>
+            </div>
+            <p class="copyright">© 2026 SocialChad. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
