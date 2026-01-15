@@ -11,7 +11,7 @@
     <!-- Open Graph / Social -->
     <meta property="og:title" content="SocialChad - Your Confidence Coach">
     <meta property="og:description" content="Stop second-guessing yourself. Start connecting with confidence.">
-    <meta property="og:image" content="https://socialchad.app/og-image.png">
+    <meta property="og:image" content="https://socialchad.app/img/AppIcon-Chad-1024.png">
     <meta property="og:url" content="https://socialchad.app">
     <meta property="og:type" content="website">
     
@@ -19,19 +19,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SocialChad - Your Confidence Coach">
     <meta name="twitter:description" content="Stop second-guessing yourself. Start connecting with confidence.">
+    <meta name="twitter:image" content="https://socialchad.app/img/AppIcon-Chad-1024.png">
     
     <style>
-        /* SCREENSHOT IMAGE REFERENCES:
-           Images are in the /img folder:
-           - img/screenshot-home.png
-           - img/screenshot-scan.png
-           - img/screenshot-chat.png
-           - img/screenshot-profile.png
-           - img/screenshot-onboarding.png
-           - img/Gabriella.png
-           - img/gabriella_profile.png
-           - img/AppIcon-Chad-1024.png
-        */
         * {
             margin: 0;
             padding: 0;
@@ -67,12 +57,27 @@
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+            transition: background 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background: rgba(0,0,0,0.95);
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 24px;
             font-weight: 800;
             color: #FFFFFF;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
         }
         
         .logo span {
@@ -98,7 +103,7 @@
         
         .nav-cta {
             background: var(--gold);
-            color: var(--black);
+            color: var(--black) !important;
             padding: 10px 24px;
             border-radius: 25px;
             font-weight: 600;
@@ -109,6 +114,16 @@
         .nav-cta:hover {
             background: var(--gold-light);
             color: var(--black) !important;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
         }
         
         /* Hero Section */
@@ -193,7 +208,8 @@
             transform: translateY(-2px);
         }
         
-        .btn-primary img {
+        .btn-primary svg {
+            width: 20px;
             height: 20px;
         }
         
@@ -240,6 +256,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
         }
         
         .phone-notch {
@@ -375,6 +392,12 @@
             overflow-x: auto;
             padding: 20px 0;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .screenshots-container::-webkit-scrollbar {
+            display: none;
         }
         
         .screenshot-item {
@@ -430,6 +453,10 @@
             gap: 80px;
             align-items: center;
             margin-bottom: 100px;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
         }
         
         .step:nth-child(even) {
@@ -496,9 +523,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
         }
         
-        /* Testimonials / Social Proof */
+        /* Social Proof / Stats */
         .social-proof {
             padding: 100px 40px;
             background: var(--black);
@@ -589,6 +617,12 @@
             font-size: 16px;
         }
         
+        .premium-trial {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
         /* CTA Section */
         .cta {
             padding: 120px 40px;
@@ -663,8 +697,17 @@
         }
         
         .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 24px;
             font-weight: 800;
+        }
+        
+        .footer-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
         }
         
         .footer-logo span {
@@ -740,6 +783,10 @@
                 display: none;
             }
             
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             h1 {
                 font-size: 36px;
             }
@@ -748,8 +795,16 @@
                 padding: 100px 20px 60px;
             }
             
+            .features {
+                padding: 80px 20px;
+            }
+            
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 32px;
             }
             
             .stats-grid {
@@ -757,8 +812,16 @@
                 gap: 30px;
             }
             
+            .stat-item h3 {
+                font-size: 36px;
+            }
+            
             .premium-card {
                 padding: 40px 24px;
+            }
+            
+            .premium-card h2 {
+                font-size: 28px;
             }
             
             .cta h2 {
@@ -773,19 +836,33 @@
             .floating-card {
                 display: none;
             }
+            
+            .phone-frame {
+                width: 260px;
+                height: 540px;
+            }
+            
+            .step-phone {
+                width: 220px;
+                height: 450px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">Social<span>Chad</span></div>
+        <a href="/" class="logo">
+            <img src="img/AppIcon-Chad-1024.png" alt="SocialChad">
+            Social<span>Chad</span>
+        </a>
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="#how-it-works">How It Works</a>
             <a href="#premium">Premium</a>
-            <a href="#" class="nav-cta">Download</a>
+            <a href="#download" class="nav-cta">Download</a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
     </nav>
     
     <!-- Hero Section -->
@@ -799,8 +876,8 @@
                 <h1>Stop Overthinking.<br><span class="highlight">Start Connecting.</span></h1>
                 <p class="hero-subtitle">SocialChad is your personal AI confidence coach. Get conversation starters that sound like you on your best day—natural, engaging, and impossible to ignore.</p>
                 <div class="hero-cta">
-                    <a href="#" class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="#download" class="btn-primary">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
                         </svg>
                         Download Free
@@ -815,7 +892,7 @@
                 <div class="phone-frame">
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
-                        <img src="img/screenshot-home.png" alt="SocialChad Home Screen" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+                        <img src="img/screenshot-home.png" alt="SocialChad Home Screen">
                     </div>
                 </div>
                 <!-- Floating Cards -->
@@ -921,7 +998,7 @@
                 <div class="step-image">
                     <div class="step-phone">
                         <div class="step-phone-screen">
-                            <img src="img/screenshot-scan.png" alt="Scan Profile" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+                            <img src="img/screenshot-scan.png" alt="Scan Profile">
                         </div>
                     </div>
                 </div>
@@ -937,7 +1014,7 @@
                 <div class="step-image">
                     <div class="step-phone">
                         <div class="step-phone-screen">
-                            <img src="img/screenshot-chat.png" alt="Chat with Chad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+                            <img src="img/screenshot-chat.png" alt="Chat with Chad">
                         </div>
                     </div>
                 </div>
@@ -953,7 +1030,7 @@
                 <div class="step-image">
                     <div class="step-phone">
                         <div class="step-phone-screen">
-                            <img src="img/screenshot-profile.png" alt="Track Progress" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+                            <img src="img/screenshot-profile.png" alt="Track Progress">
                         </div>
                     </div>
                 </div>
@@ -988,7 +1065,7 @@
             <div class="premium-features">
                 <div class="premium-feature">
                     <span class="check">✓</span>
-                    <span>Unlimited practice sessions</span>
+                    <span>Unlimited profile scans</span>
                 </div>
                 <div class="premium-feature">
                     <span class="check">✓</span>
@@ -1011,16 +1088,16 @@
                     <span>Zero distractions</span>
                 </div>
             </div>
-            <a href="#" class="btn-primary">Start Free Trial</a>
-            <p style="margin-top:16px;font-size:14px;color:var(--gray);">3-day free trial • Cancel anytime</p>
+            <a href="#download" class="btn-primary">Start Free Trial</a>
+            <p class="premium-trial">3-day free trial • Cancel anytime</p>
         </div>
     </section>
     
     <!-- Final CTA -->
-    <section class="cta">
+    <section class="cta" id="download">
         <h2>Ready to Stop Hesitating?</h2>
         <p>Join thousands of men who've stopped overthinking and started connecting with real confidence.</p>
-        <a href="#" class="app-store-btn">
+        <a href="https://apps.apple.com/app/socialchad" class="app-store-btn">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
             </svg>
@@ -1034,18 +1111,21 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Social<span>Chad</span></div>
+            <div class="footer-logo">
+                <img src="img/AppIcon-Chad-1024.png" alt="SocialChad">
+                Social<span>Chad</span>
+            </div>
             <div class="footer-links">
                 <a href="/privacy.html">Privacy Policy</a>
                 <a href="/terms.html">Terms of Service</a>
                 <a href="/faq.html">FAQ</a>
-                <a href="/cdn-cgi/l/email-protection#ea999f9a9a85989eaa998589838b8689828b8ec48b9a9a">Contact</a>
+                <a href="mailto:support@socialchad.app">Contact</a>
             </div>
             <div class="footer-copy">© 2026 SocialChad. All rights reserved.</div>
         </div>
     </footer>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1061,5 +1141,21 @@
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(0,0,0,0.95)';
+                nav.classList.add('scrolled');
             } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle (basic functionality)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
+</body>
+</html>
