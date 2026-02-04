@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialChad Blog - Dating Tips, Confidence & Conversation Advice</title>
+    <meta name="description" content="Expert dating advice, conversation tips, and confidence-building strategies. Learn how to message with confidence on Tinder, Hinge, Bumble and more.">
+    <meta name="keywords" content="dating tips, conversation starters, tinder openers, hinge messages, dating app advice, confidence tips">
+    <link rel="icon" type="image/png" href="../img/AppIcon-Chad-1024.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SocialChad Blog - Dating Tips & Confidence Advice">
+    <meta property="og:description" content="Expert dating advice, conversation tips, and confidence-building strategies for dating apps.">
+    <meta property="og:image" content="https://socialchad.app/img/AppIcon-Chad-1024.png">
+    <meta property="og:url" content="https://socialchad.app/blog/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SocialChad Blog - Dating Tips & Confidence Advice">
+    <meta name="twitter:description" content="Expert dating advice, conversation tips, and confidence-building strategies for dating apps.">
+    <meta name="twitter:image" content="https://socialchad.app/img/AppIcon-Chad-1024.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #E5C04B;
+            --black: #000000;
+            --dark: #0A0A0A;
+            --gray: #888888;
+            --light-gray: #CCCCCC;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--black);
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.95);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        
+        .logo span { color: var(--gold); }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover { color: #FFFFFF; }
+        .nav-links a.active { color: var(--gold); }
+        
+        .nav-cta {
+            background: var(--gold);
+            color: var(--black) !important;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--gold-light);
+            color: var(--black) !important;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Blog Header */
+        .blog-header {
+            padding: 140px 40px 60px;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--black), var(--dark));
+        }
+        
+        .blog-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .blog-header h1 .highlight { color: var(--gold); }
+        
+        .blog-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px 120px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: #111111;
+            border: 1px solid #222;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        .blog-card-body {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: var(--gray);
+        }
+        
+        .blog-card-tag {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .blog-card-body h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .blog-card-body p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.7;
+            flex: 1;
+        }
+        
+        .blog-card-read {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gold);
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: gap 0.3s;
+        }
+        
+        .blog-card:hover .blog-card-read { gap: 10px; }
+        
+        /* Empty State */
+        .blog-empty {
+            text-align: center;
+            padding: 80px 40px;
+            color: var(--gray);
+        }
+        
+        .blog-empty h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        
+        /* CTA Banner */
+        .blog-cta {
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+        
+        .blog-cta-inner {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+            border: 1px solid var(--gold);
+            border-radius: 20px;
+            padding: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .blog-cta-inner h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .blog-cta-inner p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 40px;
+            border-top: 1px solid #222;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+        .footer-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+        
+        .footer-logo span { color: var(--gold); }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover { color: #FFFFFF; }
+        
+        .footer-copy {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .blog-header { padding: 100px 20px 40px; }
+            .blog-header h1 { font-size: 32px; }
+            .blog-grid { padding: 40px 20px 80px; grid-template-columns: 1fr; }
+            .blog-cta { padding: 0 20px; }
+            .blog-cta-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 24px;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <img src="../img/AppIcon-Chad-1024.png" alt="SocialChad">
+            Social<span>Chad</span>
+        </a>
+        <div class="nav-links">
+            <a href="/#features">Features</a>
+            <a href="/#how-it-works">How It Works</a>
+            <a href="/blog/" class="active">Blog</a>
+            <a href="/#premium">Premium</a>
+            <a href="https://apps.apple.com/us/app/socialchad/id6757861027" class="nav-cta">Get the App</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </nav>
+    
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <h1>The <span class="highlight">Confidence</span> Blog</h1>
+        <p>Dating tips, conversation strategies, and confidence advice from the guys who actually get replies.</p>
+    </section>
+    
+    <!-- Blog Grid -->
+    <div class="blog-grid" id="blog-posts">
+        <!-- Posts are populated here. Example card structure: -->
+        <!--
+        <a href="posts/example-post.html" class="blog-card">
+            <div class="blog-card-image">💬</div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">
+                    <span class="blog-card-tag">Openers</span>
+                    <span>Jan 15, 2026</span>
+                    <span>5 min read</span>
+                </div>
+                <h2>Post Title Goes Here</h2>
+                <p>Post excerpt goes here, keep it to 2-3 sentences max.</p>
+                <span class="blog-card-read">Read more →</span>
+            </div>
+        </a>
+        -->
+    </div>
+    
+    <!-- Empty State (shown when no posts yet) -->
+    <div class="blog-empty" id="blog-empty">
+        <h2>Fresh content dropping soon 🔥</h2>
+        <p>We're cooking up dating tips and conversation strategies. Check back soon.</p>
+    </div>
+    
+    <!-- CTA Banner -->
+    <div class="blog-cta">
+        <div class="blog-cta-inner">
+            <div>
+                <h3>Stop reading. Start connecting.</h3>
+                <p>Get personalized openers that actually work — powered by AI.</p>
+            </div>
+            <a href="https://apps.apple.com/us/app/socialchad/id6757861027" class="btn-primary">Download SocialChad</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../img/AppIcon-Chad-1024.png" alt="SocialChad">
+                Social<span>Chad</span>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/blog/">Blog</a>
+                <a href="mailto:support@socialchad.app">Contact</a>
+            </div>
+            <div class="footer-copy">© 2026 SocialChad. All rights reserved.</div>
+        </div>
+    </footer>
+    
+    <script>
+        // Blog post data — add entries here as posts are published
+        const posts = [
+            // {
+            //     slug: "best-tinder-openers-2026",
+            //     emoji: "🔥",
+            //     tag: "Openers",
+            //     date: "Feb 3, 2026",
+            //     readTime: "6 min read",
+            //     title: "Top 10 Tinder Openers That Actually Get Replies in 2026",
+            //     excerpt: "Forget 'hey.' These openers have been tested on thousands of profiles and actually start real conversations."
+            // },
+        ];
+        
+        const grid = document.getElementById('blog-posts');
+        const empty = document.getElementById('blog-empty');
+        
+        if (posts.length === 0) {
+            grid.style.display = 'none';
+            empty.style.display = 'block';
+        } else {
+            empty.style.display = 'none';
+            posts.forEach(post => {
+                const card = document.createElement('a');
+                card.href = `posts/${post.slug}.html`;
+                card.className = 'blog-card';
+                card.innerHTML = `
+                    <div class="blog-card-image">${post.emoji}</div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-tag">${post.tag}</span>
+                            <span>${post.date}</span>
+                            <span>${post.readTime}</span>
+                        </div>
+                        <h2>${post.title}</h2>
+                        <p>${post.excerpt}</p>
+                        <span class="blog-card-read">Read more →</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

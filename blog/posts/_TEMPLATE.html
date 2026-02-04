@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ✏️ EDIT: Update title, description, and URL for each post -->
+    <title>POST TITLE — SocialChad Blog</title>
+    <meta name="description" content="POST DESCRIPTION — 150-160 chars for SEO">
+    <meta name="keywords" content="keyword1, keyword2, keyword3, dating advice, socialchad">
+    <link rel="icon" type="image/png" href="../../img/AppIcon-Chad-1024.png">
+    <link rel="canonical" href="https://socialchad.app/blog/posts/POST-SLUG.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="POST TITLE">
+    <meta property="og:description" content="POST DESCRIPTION">
+    <meta property="og:image" content="https://socialchad.app/img/AppIcon-Chad-1024.png">
+    <meta property="og:url" content="https://socialchad.app/blog/posts/POST-SLUG.html">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-02-03T00:00:00Z">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="POST TITLE">
+    <meta name="twitter:description" content="POST DESCRIPTION">
+    <meta name="twitter:image" content="https://socialchad.app/img/AppIcon-Chad-1024.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "POST TITLE",
+        "description": "POST DESCRIPTION",
+        "author": {
+            "@type": "Organization",
+            "name": "SocialChad"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SocialChad",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://socialchad.app/img/AppIcon-Chad-1024.png"
+            }
+        },
+        "datePublished": "2026-02-03",
+        "dateModified": "2026-02-03",
+        "mainEntityOfPage": "https://socialchad.app/blog/posts/POST-SLUG.html"
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #E5C04B;
+            --black: #000000;
+            --dark: #0A0A0A;
+            --gray: #888888;
+            --light-gray: #CCCCCC;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--black);
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.95);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        
+        .logo img { width: 40px; height: 40px; border-radius: 10px; }
+        .logo span { color: var(--gold); }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover { color: #FFFFFF; }
+        .nav-links a.active { color: var(--gold); }
+        
+        .nav-cta {
+            background: var(--gold);
+            color: var(--black) !important;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .nav-cta:hover { background: var(--gold-light); color: var(--black) !important; }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Article Layout */
+        .article-header {
+            padding: 140px 40px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: gap 0.3s;
+        }
+        
+        .article-back:hover { gap: 10px; }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .article-tag {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .article-header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .article-subtitle {
+            font-size: 20px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+        }
+        
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 16px;
+            color: #fff;
+        }
+        
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 36px 0 12px;
+            color: #fff;
+        }
+        
+        .article-content p {
+            font-size: 17px;
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 16px 0 24px 24px;
+            color: var(--light-gray);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+        }
+        
+        .article-content strong {
+            color: #fff;
+        }
+        
+        .article-content em {
+            color: var(--gold);
+            font-style: italic;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        
+        .article-content a:hover {
+            color: var(--gold-light);
+        }
+        
+        .article-content blockquote {
+            border-left: 3px solid var(--gold);
+            padding: 16px 24px;
+            margin: 24px 0;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .article-content blockquote p {
+            color: #ddd;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        /* Opener Example Box */
+        .opener-example {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .opener-example .label {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .opener-example .text {
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        /* CTA Box */
+        .article-cta {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+            border: 1px solid var(--gold);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        
+        .article-cta h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .article-cta p {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
+        
+        .related-posts h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .related-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-card span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 40px;
+            border-top: 1px solid #222;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+        .footer-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .footer-logo span { color: var(--gold); }
+        
+        .footer-links { display: flex; gap: 30px; }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover { color: #FFFFFF; }
+        .footer-copy { color: var(--gray); font-size: 14px; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .article-header { padding: 100px 20px 30px; }
+            .article-header h1 { font-size: 28px; }
+            .article-content { padding: 30px 20px 60px; }
+            .article-content h2 { font-size: 24px; }
+            .article-cta { padding: 30px 20px; }
+            .related-posts { padding: 0 20px 60px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <img src="../../img/AppIcon-Chad-1024.png" alt="SocialChad">
+            Social<span>Chad</span>
+        </a>
+        <div class="nav-links">
+            <a href="/#features">Features</a>
+            <a href="/#how-it-works">How It Works</a>
+            <a href="/blog/" class="active">Blog</a>
+            <a href="/#premium">Premium</a>
+            <a href="https://apps.apple.com/us/app/socialchad/id6757861027" class="nav-cta">Get the App</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </nav>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <a href="/blog/" class="article-back">← Back to Blog</a>
+        <div class="article-meta">
+            <span class="article-tag">TAG</span>
+            <span>DATE</span>
+            <span>X min read</span>
+        </div>
+        <h1>POST TITLE GOES HERE</h1>
+        <p class="article-subtitle">A brief subtitle or hook that makes them want to keep reading.</p>
+    </header>
+    
+    <!-- Article Content -->
+    <article class="article-content">
+        
+        <!-- ✏️ WRITE YOUR POST CONTENT HERE -->
+        
+        <h2>First Section Heading</h2>
+        <p>Your content goes here. Write naturally, like you're giving advice to a buddy.</p>
+        
+        <!-- Use this for opener examples: -->
+        <div class="opener-example">
+            <div class="label">Example opener</div>
+            <div class="text">"Your golden retriever is adorable — does he always look that judgmental or is that just for photos?"</div>
+        </div>
+        
+        <h3>Subsection Heading</h3>
+        <p>More content. Keep paragraphs short and punchy. This isn't a textbook.</p>
+        
+        <blockquote>
+            <p>Pro tip: The best openers reference something specific in her profile. Generic = ignored.</p>
+        </blockquote>
+        
+        <ul>
+            <li><strong>Point one</strong> — explanation</li>
+            <li><strong>Point two</strong> — explanation</li>
+            <li><strong>Point three</strong> — explanation</li>
+        </ul>
+        
+        <!-- Download CTA — include once per post, usually near end -->
+        <div class="article-cta">
+            <h3>Stop overthinking. Start connecting.</h3>
+            <p>SocialChad gives you personalized openers in seconds — just scan a profile and go.</p>
+            <a href="https://apps.apple.com/us/app/socialchad/id6757861027" class="btn-primary">Download SocialChad Free</a>
+        </div>
+        
+    </article>
+    
+    <!-- Related Posts (optional — add links to other posts) -->
+    <section class="related-posts">
+        <h3>Keep Reading</h3>
+        <div class="related-grid">
+            <!--
+            <a href="other-post.html" class="related-card">
+                <h4>Related Post Title</h4>
+                <span>5 min read</span>
+            </a>
+            -->
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../../img/AppIcon-Chad-1024.png" alt="SocialChad">
+                Social<span>Chad</span>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/blog/">Blog</a>
+                <a href="mailto:support@socialchad.app">Contact</a>
+            </div>
+            <div class="footer-copy">© 2026 SocialChad. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>
